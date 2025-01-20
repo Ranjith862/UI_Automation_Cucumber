@@ -1,0 +1,1297 @@
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='UTF-8' /> 
+	<meta name='description' content='' />
+	<meta name='robots' content='noodp, noydir' />
+	<meta name='viewport' content='width=device-width, initial-scale=1' />
+	<meta id="timeStampFormat" name="timeStampFormat" content='MMM d, yyyy hh:mm:ss a'/>
+	
+        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600' rel='stylesheet' type='text/css' />
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+        <link href='https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@ff53917fbbdb5ef820abbbe4d199a6942dc771ff/v3html/css/extent.css' type='text/css' rel='stylesheet' />
+	
+	<title>Extent</title>
+
+	<style type='text/css'>
+		/* json-tree */
+		.jstBracket,.jstComma,.jstValue{white-space:pre-wrap}.jstValue{font-size:10px;font-weight:400;font-family:"Lucida Console",Monaco,monospace}.jstProperty{color:#666;word-wrap:break-word}.jstBool{color:#2525CC}.jstNum{color:#D036D0}.jstNull{color:gray}.jstStr{color:#2DB669}.jstFold:after{content:' -';cursor:pointer}.jstExpand{white-space:normal}.jstExpand:after{content:' +';cursor:pointer}.jstFolded{white-space:normal!important}.jstHiddenBlock{display:none}
+			
+	</style>
+	
+	<script type="text/javascript">
+		/*! json-tree - v0.2.2 - 2017-09-25, MIT LICENSE */
+		var JSONTree=function(){var n={"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#x27;","/":"&#x2F;"},t=0,r=0;this.create=function(n,t){return r+=1,N(u(n,0,!1),{class:"jstValue"})};var e=function(t){return t.replace(/[&<>'"]/g,function(t){return n[t]})},s=function(){return r+"_"+t++},u=function(n,t,r){if(null===n)return f(r?t:0);switch(typeof n){case"boolean":return l(n,r?t:0);case"number":return i(n,r?t:0);case"string":return o(n,r?t:0);default:return n instanceof Array?a(n,t,r):c(n,t,r)}},c=function(n,t,r){var e=s(),u=Object.keys(n).map(function(r){return j(r,n[r],t+1,!0)}).join(m()),c=[g("{",r?t:0,e),N(u,{id:e}),p("}",t)].join("\n");return N(c,{})},a=function(n,t,r){var e=s(),c=n.map(function(n){return u(n,t+1,!0)}).join(m());return[g("[",r?t:0,e),N(c,{id:e}),p("]",t)].join("\n")},o=function(n,t){var r=e(JSON.stringify(n));return N(v(r,t),{class:"jstStr"})},i=function(n,t){return N(v(n,t),{class:"jstNum"})},l=function(n,t){return N(v(n,t),{class:"jstBool"})},f=function(n){return N(v("null",n),{class:"jstNull"})},j=function(n,t,r){var s=v(e(JSON.stringify(n))+": ",r),c=N(u(t,r,!1),{});return N(s+c,{class:"jstProperty"})},m=function(){return N(",\n",{class:"jstComma"})},N=function(n,t){return d("span",t,n)},d=function(n,t,r){return"<"+n+Object.keys(t).map(function(n){return" "+n+'="'+t[n]+'"'}).join("")+">"+r+"</"+n+">"},g=function(n,t,r){return N(v(n,t),{class:"jstBracket"})+N("",{class:"jstFold",onclick:"JSONTree.toggle('"+r+"')"})};this.toggle=function(n){var t=document.getElementById(n),r=t.parentNode,e=t.previousElementSibling;""===t.className?(t.className="jstHiddenBlock",r.className="jstFolded",e.className="jstExpand"):(t.className="",r.className="",e.className="jstFold")};var p=function(n,t){return N(v(n,t),{})},v=function(n,t){return Array(2*t+1).join(" ")+n};return this}();
+	</script>
+</head>
+	<body class='extent standard default hide-overflow bdd-report'>
+		<div id='theme-selector' alt='Click to toggle theme. To enable by default, use theme configuration.' title='Click to toggle theme. To enable by default, use theme configuration.'>
+			<span><i class='material-icons'>desktop_windows</i></span>
+		</div>
+<nav>
+	<div class="nav-wrapper">
+        <a href="#!" class="brand-logo black"><img src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@ff53917fbbdb5ef820abbbe4d199a6942dc771ff/commons/img/logo.png"></a>
+		<!-- slideout menu -->
+		<ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
+			<li class='waves-effect active'><a href='#!' view='test-view' onclick="configureView(0);chartsView('test');"><i class='material-icons'>dashboard</i></a></li>
+			<li class='waves-effect'><a href='#!' view='category-view' onclick="configureView(1)"><i class='material-icons'>label_outline</i></a></li>
+			<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></a></li>
+		</ul>
+		<!-- report name -->
+		<span class='report-name'>Automation Report</span>
+		<!-- report headline -->
+		<span class='report-headline'></span>
+		<!-- nav-right -->
+		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
+			<a href='#!'>
+			<span class='label blue darken-3 suite-start-time'>Jan 20, 2025 11:55:59 AM</span>
+			</a>
+		</ul>
+	</div>
+</nav>		<!-- container -->
+		<div class='container'>
+<div id='test-view' class='view'>
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- test toggle -->
+			<div class='chip transparent'>
+				<a class='dropdown-button tests-toggle' data-activates='tests-toggle' data-constrainwidth='true' data-beloworigin='true' data-hover='true' href='#'>
+				<i class='material-icons'>warning</i> Status
+				</a>
+				<ul id='tests-toggle' class='dropdown-content'>
+										<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
+					<li class='divider'></li>
+					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
+				</ul>
+			</div>
+			<!-- test toggle -->
+			<!-- category toggle -->
+			<div class='chip transparent'>
+				<a class='dropdown-button category-toggle' data-activates='category-toggle' data-constrainwidth='false' data-beloworigin='true' data-hover='true' href='#'>
+				<i class='material-icons'>local_offer</i> Category
+				</a>
+				<ul id='category-toggle' class='dropdown-content'>
+					<li><a href='#'>@verifycfoname</a></li>
+					<li><a href='#'>@verifyemployee</a></li>
+					<li><a href='#'>@deletetheemployee</a></li>
+					<li><a href='#'>@smoke</a></li>
+					<li><a href='#'>@all</a></li>
+					<li><a href='#'>@employeeCRUD</a></li>
+					<li><a href='#'>@getcfoname</a></li>
+					<li><a href='#'>@edit</a></li>
+					<li><a href='#'>@addemployee</a></li>
+					<li><a href='#'>@edittheemployee</a></li>
+					<li><a href='#'>@retrive</a></li>
+					<li><a href='#'>@verifyemployeinfo</a></li>
+					<li><a href='#'>@delete</a></li>
+					<li class='divider'></li>
+					<li class='clear'><a href='#!' clear='true'>Clear Filters</a></li>
+				</ul>
+			</div>
+			<!-- category toggle -->
+			<!-- clear filters -->
+			<div class='chip transparent hide'>
+				<a class='' id='clear-filters' alt='Clear Filters' title='Clear Filters'>
+				<i class='material-icons'>close</i> Clear
+				</a>
+			</div>
+			<!-- clear filters -->
+			<!-- enable dashboard -->
+			<div id='toggle-test-view-charts' class='chip transparent'>
+				<a class='pink-text' id='enable-dashboard' alt='Enable Dashboard' title='Enable Dashboard'>
+				<i class='material-icons'>track_changes</i> Dashboard
+				</a>
+			</div>
+			<!-- enable dashboard -->
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+				<i class='material-icons'>search</i> Search
+				</a>
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+
+	
+	<div class='subview-left left'>
+		<div class='view-summary'>
+			<ul id='test-collection' class='test-collection'>
+				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='1'>
+					<div class='test-heading'>
+						<span class='test-name'>This feature is to get the CFO name from the OrangeHRM app</span>
+						<span class='test-time'>Jan 20, 2025 11:56:00 AM</span>
+						<span class='test-status right pass'>Pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class="sr-filters bdd-filters">
+	<a class="btn-floating waves-effect waves-light pass green" title="pass"><i class='material-icons'>check_circle</i></a>
+	<a class="btn-floating waves-effect waves-light fail red" title="fail"><i class='material-icons'>cancel</i></a>
+	<a class="btn-floating waves-effect waves-light skip blue" title="skip"><i class='material-icons'>redo</i></a>
+	<a class="btn-floating waves-effect waves-light clear grey" title="clear"><i class='material-icons'>clear</i></a>
+</div>
+
+<div class='scenario node' test-id='2' status='pass'>
+
+	<span class='duration right label'>00 00 11.343</span>
+	<div class="bdd-test">
+		<div class="scenario-name"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span> Scenario: This test is to verify the CFO name</div>
+	</div>
+	
+	
+		<div class='category-list'>
+				<span class='category label'>@all</span>
+				<span class='category label'>@verifycfoname</span>
+				<span class='category label'>@getcfoname</span>
+				<span class='category label'>@smoke</span>
+		</div>
+	
+	<ul class='steps'>
+		<li test-id='4' class='node given Pass' status='Pass'>
+			<div class="step-name" title="(com.lao.step_definitions.TS01_VerifyCFOName_Step_Def.the_user_is_on_Home_Page())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Given the user is on Home Page</div>
+
+
+		</li>
+		<li test-id='6' class='node when Pass' status='Pass'>
+			<div class="step-name" title="(com.lao.step_definitions.TS01_VerifyCFOName_Step_Def.the_user_clicks_on_the_directory_option_from_the_menu_bar())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>When the user clicks on the directory option from the Menu bar</div>
+
+
+		</li>
+		<li test-id='8' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(com.lao.step_definitions.TS01_VerifyCFOName_Step_Def.the_user_selects_teh_job_title_as_from_the_drop_down())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And the user selects teh job title as CFO from the drop down</div>
+
+
+		</li>
+		<li test-id='10' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(com.lao.step_definitions.TS01_VerifyCFOName_Step_Def.clicks_the_search_button())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And clicks the search button</div>
+
+
+		</li>
+		<li test-id='12' class='node then Pass' status='Pass'>
+			<div class="step-name" title="(com.lao.step_definitions.TS01_VerifyCFOName_Step_Def.the_user_should_see_the_cfo_name_as(java.lang.String))"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then the user should see the CFO name as "Peter Mac Anderson"</div>
+
+
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='14'>
+					<div class='test-heading'>
+						<span class='test-name'>This feature is to add and check the employee</span>
+						<span class='test-time'>Jan 20, 2025 11:56:12 AM</span>
+						<span class='test-status right pass'>Pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class="sr-filters bdd-filters">
+	<a class="btn-floating waves-effect waves-light pass green" title="pass"><i class='material-icons'>check_circle</i></a>
+	<a class="btn-floating waves-effect waves-light fail red" title="fail"><i class='material-icons'>cancel</i></a>
+	<a class="btn-floating waves-effect waves-light skip blue" title="skip"><i class='material-icons'>redo</i></a>
+	<a class="btn-floating waves-effect waves-light clear grey" title="clear"><i class='material-icons'>clear</i></a>
+</div>
+
+<div class='scenario node' test-id='15' status='pass'>
+
+	<span class='duration right label'>00 00 08.255</span>
+	<div class="bdd-test">
+		<div class="scenario-name"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span> Scenario: Verify that the user can add a new employee</div>
+	</div>
+	
+	
+		<div class='category-list'>
+				<span class='category label'>@all</span>
+				<span class='category label'>@employeeCRUD</span>
+				<span class='category label'>@addemployee</span>
+				<span class='category label'>@smoke</span>
+				<span class='category label'>@verifyemployee</span>
+		</div>
+	
+	<ul class='steps'>
+		<li test-id='17' class='node given Pass' status='Pass'>
+			<div class="step-name" title="(com.lao.step_definitions.TS02_VerifyTheUserCanAddEmployee_Step_Def.the_user_is_on_the_orange_hrm_dashboard_page())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Given the user is on the OrangeHRM dashboard page</div>
+
+
+		</li>
+		<li test-id='19' class='node when Pass' status='Pass'>
+			<div class="step-name" title="(com.lao.step_definitions.TS02_VerifyTheUserCanAddEmployee_Step_Def.the_user_clicks_on_pim_option_from_the_menu_bar())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>When the user clicks on PIM option from the menu bar</div>
+
+
+		</li>
+		<li test-id='21' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(com.lao.step_definitions.TS02_VerifyTheUserCanAddEmployee_Step_Def.the_user_clicks_on_the_add_employee())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And the user clicks on the Add employee</div>
+
+
+		</li>
+		<li test-id='23' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(com.lao.step_definitions.TS02_VerifyTheUserCanAddEmployee_Step_Def.the_user_enters_and(java.lang.String,java.lang.String))"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And the user enters "Test12345" and "DemoTest"</div>
+
+
+		</li>
+		<li test-id='25' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(com.lao.step_definitions.TS02_VerifyTheUserCanAddEmployee_Step_Def.the_user_clicks_on_the_save_button())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And the user clicks on the Save button</div>
+
+
+		</li>
+		<li test-id='27' class='node then Pass' status='Pass'>
+			<div class="step-name" title="(com.lao.step_definitions.TS02_VerifyTheUserCanAddEmployee_Step_Def.the_user_should_be_navigated_to_personal_details_page())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then the user should be navigated to personal details page</div>
+
+
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='29'>
+					<div class='test-heading'>
+						<span class='test-name'>This feature is to check the previously added employee is there or not</span>
+						<span class='test-time'>Jan 20, 2025 11:56:20 AM</span>
+						<span class='test-status right pass'>Pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class="sr-filters bdd-filters">
+	<a class="btn-floating waves-effect waves-light pass green" title="pass"><i class='material-icons'>check_circle</i></a>
+	<a class="btn-floating waves-effect waves-light fail red" title="fail"><i class='material-icons'>cancel</i></a>
+	<a class="btn-floating waves-effect waves-light skip blue" title="skip"><i class='material-icons'>redo</i></a>
+	<a class="btn-floating waves-effect waves-light clear grey" title="clear"><i class='material-icons'>clear</i></a>
+</div>
+
+<div class='scenario node' test-id='30' status='pass'>
+
+	<span class='duration right label'>00 00 02.473</span>
+	<div class="bdd-test">
+		<div class="scenario-name"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span> Scenario: This scenario is to verify the emoployee information</div>
+	</div>
+	
+	
+		<div class='category-list'>
+				<span class='category label'>@retrive</span>
+				<span class='category label'>@all</span>
+				<span class='category label'>@employeeCRUD</span>
+				<span class='category label'>@smoke</span>
+				<span class='category label'>@verifyemployeinfo</span>
+		</div>
+	
+	<ul class='steps'>
+		<li test-id='32' class='node given Pass' status='Pass'>
+			<div class="step-name" title="(com.lao.step_definitions.TS03_VerifyTheUserCanReadEmployeeInformation_Step_Def.the_user_is_in_dashboard_page())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Given the user is in dashboard page</div>
+
+
+		</li>
+		<li test-id='34' class='node when Pass' status='Pass'>
+			<div class="step-name" title="(com.lao.step_definitions.TS03_VerifyTheUserCanReadEmployeeInformation_Step_Def.the_user_clicks_the_PIM_link_from_menu_bar())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>When the user clicks the PIM link from menu bar</div>
+
+
+		</li>
+		<li test-id='36' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(com.lao.step_definitions.TS03_VerifyTheUserCanReadEmployeeInformation_Step_Def.the_user_enters_the_existing_employee_name(java.lang.String))"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And the user enters the existing employee name "Test12345 DemoTest"</div>
+
+
+		</li>
+		<li test-id='38' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(com.lao.step_definitions.TS03_VerifyTheUserCanReadEmployeeInformation_Step_Def.click_on_the_search_button())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And click on the search button</div>
+
+
+		</li>
+		<li test-id='40' class='node then Pass' status='Pass'>
+			<div class="step-name" title="(com.lao.step_definitions.TS03_VerifyTheUserCanReadEmployeeInformation_Step_Def.the_system_should_be_display_the_record())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then the system should be display the record</div>
+
+
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='42'>
+					<div class='test-heading'>
+						<span class='test-name'>This feature is to verify the edit functionality</span>
+						<span class='test-time'>Jan 20, 2025 11:56:23 AM</span>
+						<span class='test-status right pass'>Pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class="sr-filters bdd-filters">
+	<a class="btn-floating waves-effect waves-light pass green" title="pass"><i class='material-icons'>check_circle</i></a>
+	<a class="btn-floating waves-effect waves-light fail red" title="fail"><i class='material-icons'>cancel</i></a>
+	<a class="btn-floating waves-effect waves-light skip blue" title="skip"><i class='material-icons'>redo</i></a>
+	<a class="btn-floating waves-effect waves-light clear grey" title="clear"><i class='material-icons'>clear</i></a>
+</div>
+
+<div class='scenario outline node' test-id='43' status='pass'>
+
+	<span class='duration right label'>00 00 06.328</span>
+	<div class="bdd-test">
+		<div class="scenario-name"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span> Scenario Outline: This scenario is to verify the edit function</div>
+	</div>
+	
+		<div class='node-desc'><br><br><table class='markup-table table '><tr><td>OldName</td><td>UpdatedName</td></tr><tr><td>Test12345 DemoTest</td><td>AutomationDemo</td></tr></table></div>
+	
+	
+	<ul class='steps'>
+		<li test-id='44' class='node scenario Pass' status='Pass'>
+			<div class="step-name" title="()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>This scenario is to verify the edit function</div>
+
+				<div class='category-list'>
+						<span class='category label'>@edit</span>
+						<span class='category label'>@edittheemployee</span>
+						<span class='category label'>@all</span>
+						<span class='category label'>@employeeCRUD</span>
+						<span class='category label'>@smoke</span>
+				</div>
+
+			<ul class='gc steps'>
+				<li test-id='46' class='gc given Pass' status='Pass'>
+					<h6 class="step-name" title="com.lao.step_definitions.TS04_EditEmployee_Step_Def.the_user_is_in_pim_page()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Given the user is in pim page</h6>
+
+				</li>
+				<li test-id='48' class='gc when Pass' status='Pass'>
+					<h6 class="step-name" title="com.lao.step_definitions.TS04_EditEmployee_Step_Def.the_user_enter_employee_name(java.lang.String)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>When the user enters employee name "Test12345 DemoTest"</h6>
+
+				</li>
+				<li test-id='50' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="com.lao.step_definitions.TS04_EditEmployee_Step_Def.click_on_the_search_button_the_record_will_be_visible()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And click on the search button, the record will be visible</h6>
+
+				</li>
+				<li test-id='52' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="com.lao.step_definitions.TS04_EditEmployee_Step_Def.the_user_clicks_on_edit_icon()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And the user clicks on edit icon</h6>
+
+				</li>
+				<li test-id='54' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="com.lao.step_definitions.TS04_EditEmployee_Step_Def.the_user_edit_the_name_as(java.lang.String)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And the user edit the name as "AutomationDemo"</h6>
+
+				</li>
+				<li test-id='56' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="com.lao.step_definitions.TS04_EditEmployee_Step_Def.the_user_clicks_the_save_button()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And the user clicks the save button</h6>
+
+				</li>
+				<li test-id='58' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="com.lao.step_definitions.TS04_EditEmployee_Step_Def.the_user_navigate_to_employee_list()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And the user navigate to employee list</h6>
+
+				</li>
+				<li test-id='60' class='gc and Pass' status='Pass'>
+					<h6 class="step-name" title="com.lao.step_definitions.TS04_EditEmployee_Step_Def.search_with_the_updated_name(java.lang.String)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And search with the updated name as "AutomationDemo"</h6>
+
+				</li>
+				<li test-id='62' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="com.lao.step_definitions.TS04_EditEmployee_Step_Def.the_system_should_be_displayed_the_updated_name()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then the system should be displayed the updated name</h6>
+
+				</li>
+			</ul>
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='64'>
+					<div class='test-heading'>
+						<span class='test-name'>This feature is to delete the existing employee</span>
+						<span class='test-time'>Jan 20, 2025 11:56:29 AM</span>
+						<span class='test-status right pass'>Pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class="sr-filters bdd-filters">
+	<a class="btn-floating waves-effect waves-light pass green" title="pass"><i class='material-icons'>check_circle</i></a>
+	<a class="btn-floating waves-effect waves-light fail red" title="fail"><i class='material-icons'>cancel</i></a>
+	<a class="btn-floating waves-effect waves-light skip blue" title="skip"><i class='material-icons'>redo</i></a>
+	<a class="btn-floating waves-effect waves-light clear grey" title="clear"><i class='material-icons'>clear</i></a>
+</div>
+
+<div class='scenario node' test-id='65' status='pass'>
+
+	<span class='duration right label'>00 00 02.726</span>
+	<div class="bdd-test">
+		<div class="scenario-name"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span> Scenario: This scenario is to delete the employee</div>
+	</div>
+	
+	
+		<div class='category-list'>
+				<span class='category label'>@deletetheemployee</span>
+				<span class='category label'>@all</span>
+				<span class='category label'>@employeeCRUD</span>
+				<span class='category label'>@delete</span>
+				<span class='category label'>@smoke</span>
+		</div>
+	
+	<ul class='steps'>
+		<li test-id='67' class='node given Pass' status='Pass'>
+			<div class="step-name" title="(com.lao.step_definitions.TS05_DeleteEmployee_Step_Def.the_user_in_pim_page())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Given the user in PIM page</div>
+
+
+		</li>
+		<li test-id='69' class='node when Pass' status='Pass'>
+			<div class="step-name" title="(com.lao.step_definitions.TS05_DeleteEmployee_Step_Def.the_user_enters_employee_name_as(java.lang.String))"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>When the user enters employee name as "AutomationDemo"</div>
+
+
+		</li>
+		<li test-id='71' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(com.lao.step_definitions.TS05_DeleteEmployee_Step_Def.click_on_the_search_button_the_record_should_be_visible())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And click on the search button, the record should be visible</div>
+
+
+		</li>
+		<li test-id='73' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(com.lao.step_definitions.TS05_DeleteEmployee_Step_Def.the_user_clicks_on_delete_icon())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And the user clicks on delete icon</div>
+
+
+		</li>
+		<li test-id='75' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(com.lao.step_definitions.TS05_DeleteEmployee_Step_Def.the_validation_message_will_open())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And the validation message will open</div>
+
+
+		</li>
+		<li test-id='77' class='node then Pass' status='Pass'>
+			<div class="step-name" title="(com.lao.step_definitions.TS05_DeleteEmployee_Step_Def.click_on_yes_delete_button_the_user_should_be_delete())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then click on Yes,Delete button the user should be delete</div>
+
+
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	
+	
+	<!-- subview left -->
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<div id='step-filters' class="right sr-filters">
+				<a class="btn-floating waves-effect waves-light green" status="pass" alt="pass" title="pass"><i class="material-icons">check_circle</i></a>
+				<a class="btn-floating waves-effect waves-light red" status="fail" alt="fail" title="fail"><i class="material-icons">cancel</i></a>
+				<a class="btn-floating waves-effect waves-light red darken-4" status="fatal" alt="fatal" title="fatal"><i class="material-icons">cancel</i></a>
+				<a class="btn-floating waves-effect waves-light pink text-lighten-1" status="error" alt="error" title="error"><i class="material-icons">error</i></a>
+				<a class="btn-floating waves-effect waves-light orange" alt="warning" status="warning" title="warning"><i class="material-icons">warning</i></a>
+				<a class="btn-floating waves-effect waves-light teal" status="skip" alt="skip" title="skip"><i class="material-icons">redo</i></a>
+				<a class="btn-floating waves-effect waves-light grey" status="clear" alt="Clear filters" title="Clear filters"><i class="material-icons">clear</i></a>
+			</div>
+			<h5 class='test-name'></h5>
+		</div>
+	</div>
+	<!-- subview right -->
+<div id='test-view-charts' class='subview-full'>
+    <div id='charts-row' class='row nm-v nm-h'>
+        <div class='col s12 m4 l4 np-h'>
+            <div class='card-panel nm-v'>
+                <div class='left panel-name'>Features</div>
+                <div class='chart-box' style="max-height:94px;">
+                    <canvas id='parent-analysis' width='90' height='70'></canvas>
+                </div>
+                <div class='block text-small'>
+                    <span class='tooltipped' data-position='top' data-tooltip='$100%'>
+                    <span class='strong'>5</span> features passed</span>
+                </div>
+                <div class='block text-small'>
+                    <span class='strong tooltipped' data-position='top' data-tooltip='0%'>
+                    0</span> features failed, 
+                    <span class='strong tooltipped' data-position='top' data-tooltip='0%'>
+                    0</span> skipped
+                </div>
+            </div>
+        </div>
+        <div class='col s12 m4 l4 np-h'>
+            <div class='card-panel nm-v'>
+                <div class='left panel-name'>Scenarios</div>
+                <div class='chart-box' style="max-height:94px;">
+                    <canvas id='child-analysis' width='90' height='70'></canvas>
+                </div>
+                <div class='block text-small'>
+                    <span class='tooltipped' data-position='top' data-tooltip='100%'>
+                    <span class='strong'>5</span> scenarios passed</span>
+                </div>
+                <div class='block text-small'>
+                    <span class='strong tooltipped' data-position='top' data-tooltip='0%'>
+                    0</span> scenarios failed, 
+                    <span class='strong tooltipped' data-position='top' data-tooltip='0%'>
+                    0</span> skipped, 
+                    <span class='strong tooltipped' data-position='top' data-tooltip='0%'>
+                    0</span> others
+                </div>
+            </div>
+        </div>
+        <div class='col s12 m4 l4 np-h'>
+            <div class='card-panel nm-v'>
+                <div class='left panel-name'>Steps</div>
+                <div class='chart-box' style="max-height:94px;">
+                    <canvas id='grandchild-analysis' width='90' height='70'></canvas>
+                </div>
+                <div class='block text-small'>
+                    <span class='tooltipped' data-position='top' data-tooltip='100%'>
+                    <span class='strong'>31</span> steps passed</span>
+                </div>
+                <div class='block text-small'>
+                    <span class='strong tooltipped' data-position='top' data-tooltip='0%'>
+                    0</span> steps failed, 
+                    <span class='strong tooltipped' data-position='top' data-tooltip='0%'>
+                    0</span> skipped, 
+                    <span class='strong tooltipped' data-position='top' data-tooltip='0%'>
+                    0</span> others
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="timeline-chart" class="row nm-v nm-h">
+        <div class="col s12 m12 l12 np-h">
+            <div class="card-panel">
+                <div class='left panel-name'>Timeline (seconds)</div>
+                <div class="chart-box" style="width:98%;max-height:145px;">
+                    <canvas id="timeline" height="120"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div></div>
+<!-- test view --><div id='category-view' class='view hide'>
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+				<i class='material-icons'>search</i> Search
+				</a>
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+	<div class='subview-left left'>
+		<div class='view-summary'>
+			<ul id='category-collection' class='category-collection'>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@verifycfoname</span>
+						<span class='category-status right'>
+						<span class='label pass'>1</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span status="pass" class='label green accent-4 white-text'>Passed: 1</span>
+							
+							
+						</div>
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Jan 20, 2025 11:56:00 AM</td>
+										<td class='linked' test-id='2'>This test is to verify the CFO name</td>
+										<td><span class='test-status Pass'>Pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@verifyemployee</span>
+						<span class='category-status right'>
+						<span class='label pass'>1</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span status="pass" class='label green accent-4 white-text'>Passed: 1</span>
+							
+							
+						</div>
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Jan 20, 2025 11:56:12 AM</td>
+										<td class='linked' test-id='15'>Verify that the user can add a new employee</td>
+										<td><span class='test-status Pass'>Pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@deletetheemployee</span>
+						<span class='category-status right'>
+						<span class='label pass'>1</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span status="pass" class='label green accent-4 white-text'>Passed: 1</span>
+							
+							
+						</div>
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Jan 20, 2025 11:56:29 AM</td>
+										<td class='linked' test-id='65'>This scenario is to delete the employee</td>
+										<td><span class='test-status Pass'>Pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@smoke</span>
+						<span class='category-status right'>
+						<span class='label pass'>5</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span status="pass" class='label green accent-4 white-text'>Passed: 5</span>
+							
+							
+						</div>
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Jan 20, 2025 11:56:00 AM</td>
+										<td class='linked' test-id='2'>This test is to verify the CFO name</td>
+										<td><span class='test-status Pass'>Pass</span></td>
+									</tr>
+									<tr>
+										<td>Jan 20, 2025 11:56:12 AM</td>
+										<td class='linked' test-id='15'>Verify that the user can add a new employee</td>
+										<td><span class='test-status Pass'>Pass</span></td>
+									</tr>
+									<tr>
+										<td>Jan 20, 2025 11:56:20 AM</td>
+										<td class='linked' test-id='30'>This scenario is to verify the emoployee information</td>
+										<td><span class='test-status Pass'>Pass</span></td>
+									</tr>
+									<tr>
+										<td>Jan 20, 2025 11:56:23 AM</td>
+										<td class='linked' test-id='44'>This scenario is to verify the edit function</td>
+										<td><span class='test-status Pass'>Pass</span></td>
+									</tr>
+									<tr>
+										<td>Jan 20, 2025 11:56:29 AM</td>
+										<td class='linked' test-id='65'>This scenario is to delete the employee</td>
+										<td><span class='test-status Pass'>Pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@all</span>
+						<span class='category-status right'>
+						<span class='label pass'>5</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span status="pass" class='label green accent-4 white-text'>Passed: 5</span>
+							
+							
+						</div>
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Jan 20, 2025 11:56:00 AM</td>
+										<td class='linked' test-id='2'>This test is to verify the CFO name</td>
+										<td><span class='test-status Pass'>Pass</span></td>
+									</tr>
+									<tr>
+										<td>Jan 20, 2025 11:56:12 AM</td>
+										<td class='linked' test-id='15'>Verify that the user can add a new employee</td>
+										<td><span class='test-status Pass'>Pass</span></td>
+									</tr>
+									<tr>
+										<td>Jan 20, 2025 11:56:20 AM</td>
+										<td class='linked' test-id='30'>This scenario is to verify the emoployee information</td>
+										<td><span class='test-status Pass'>Pass</span></td>
+									</tr>
+									<tr>
+										<td>Jan 20, 2025 11:56:23 AM</td>
+										<td class='linked' test-id='44'>This scenario is to verify the edit function</td>
+										<td><span class='test-status Pass'>Pass</span></td>
+									</tr>
+									<tr>
+										<td>Jan 20, 2025 11:56:29 AM</td>
+										<td class='linked' test-id='65'>This scenario is to delete the employee</td>
+										<td><span class='test-status Pass'>Pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@employeeCRUD</span>
+						<span class='category-status right'>
+						<span class='label pass'>4</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span status="pass" class='label green accent-4 white-text'>Passed: 4</span>
+							
+							
+						</div>
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Jan 20, 2025 11:56:12 AM</td>
+										<td class='linked' test-id='15'>Verify that the user can add a new employee</td>
+										<td><span class='test-status Pass'>Pass</span></td>
+									</tr>
+									<tr>
+										<td>Jan 20, 2025 11:56:20 AM</td>
+										<td class='linked' test-id='30'>This scenario is to verify the emoployee information</td>
+										<td><span class='test-status Pass'>Pass</span></td>
+									</tr>
+									<tr>
+										<td>Jan 20, 2025 11:56:23 AM</td>
+										<td class='linked' test-id='44'>This scenario is to verify the edit function</td>
+										<td><span class='test-status Pass'>Pass</span></td>
+									</tr>
+									<tr>
+										<td>Jan 20, 2025 11:56:29 AM</td>
+										<td class='linked' test-id='65'>This scenario is to delete the employee</td>
+										<td><span class='test-status Pass'>Pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@getcfoname</span>
+						<span class='category-status right'>
+						<span class='label pass'>1</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span status="pass" class='label green accent-4 white-text'>Passed: 1</span>
+							
+							
+						</div>
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Jan 20, 2025 11:56:00 AM</td>
+										<td class='linked' test-id='2'>This test is to verify the CFO name</td>
+										<td><span class='test-status Pass'>Pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@edit</span>
+						<span class='category-status right'>
+						<span class='label pass'>1</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span status="pass" class='label green accent-4 white-text'>Passed: 1</span>
+							
+							
+						</div>
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Jan 20, 2025 11:56:23 AM</td>
+										<td class='linked' test-id='44'>This scenario is to verify the edit function</td>
+										<td><span class='test-status Pass'>Pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@addemployee</span>
+						<span class='category-status right'>
+						<span class='label pass'>1</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span status="pass" class='label green accent-4 white-text'>Passed: 1</span>
+							
+							
+						</div>
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Jan 20, 2025 11:56:12 AM</td>
+										<td class='linked' test-id='15'>Verify that the user can add a new employee</td>
+										<td><span class='test-status Pass'>Pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@edittheemployee</span>
+						<span class='category-status right'>
+						<span class='label pass'>1</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span status="pass" class='label green accent-4 white-text'>Passed: 1</span>
+							
+							
+						</div>
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Jan 20, 2025 11:56:23 AM</td>
+										<td class='linked' test-id='44'>This scenario is to verify the edit function</td>
+										<td><span class='test-status Pass'>Pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@retrive</span>
+						<span class='category-status right'>
+						<span class='label pass'>1</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span status="pass" class='label green accent-4 white-text'>Passed: 1</span>
+							
+							
+						</div>
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Jan 20, 2025 11:56:20 AM</td>
+										<td class='linked' test-id='30'>This scenario is to verify the emoployee information</td>
+										<td><span class='test-status Pass'>Pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@verifyemployeinfo</span>
+						<span class='category-status right'>
+						<span class='label pass'>1</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span status="pass" class='label green accent-4 white-text'>Passed: 1</span>
+							
+							
+						</div>
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Jan 20, 2025 11:56:20 AM</td>
+										<td class='linked' test-id='30'>This scenario is to verify the emoployee information</td>
+										<td><span class='test-status Pass'>Pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@delete</span>
+						<span class='category-status right'>
+						<span class='label pass'>1</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span status="pass" class='label green accent-4 white-text'>Passed: 1</span>
+							
+							
+						</div>
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Jan 20, 2025 11:56:29 AM</td>
+										<td class='linked' test-id='65'>This scenario is to delete the employee</td>
+										<td><span class='test-status Pass'>Pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<h5 class='category-name'></h5>
+		</div>
+	</div>
+</div>
+<!-- category view --><div id='dashboard-view' class='view hide'>
+	<div class='card-panel transparent np-v'>
+		<h5>Dashboard</h5>
+
+		<div class='row'>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Features
+					<div class='panel-lead'>5</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Scenarios
+					<div class='panel-lead'>5</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Steps
+					<div class='panel-lead'>31</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Start
+					<div class='panel-lead'>Jan 20, 2025 11:55:59 AM</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+			 		End
+			 		<div class='panel-lead'>Jan 20, 2025 11:56:32 AM</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Time Taken
+					<div class='panel-lead'>00 00 32.935</div>
+				</div>
+			</div>
+			<div class='col s4'>
+				<div class='card-panel dashboard-environment'>
+					<span class='right label cyan white-text'>Environment</span><p>&nbsp;</p>
+					
+					<table>
+						<tr>
+							<th>Name</th>
+							<th>Value</th>
+						</tr>
+							<tr>
+								<td>os</td>
+								<td>windows</td>
+							</tr>
+					</table>
+				</div>
+			</div>
+			<div class='col s6'>
+				<div class='card-panel dashboard-categories'>
+					<span class='right label cyan white-text'>Categories</span><p>&nbsp;</p>
+					
+					<table>
+						<tr>
+							<th>Name</th>
+							<th>Passed</th>
+							<th>Failed</th>
+							<th>Skipped</th>
+							<th>Passed %</th>
+						</tr>
+						<tr>
+							<td>@verifycfoname</td>
+							<td>1</td>
+							<td>0</td>
+							<td>0</td>
+							<td>
+									100%
+							</td>
+						</tr>
+						<tr>
+							<td>@verifyemployee</td>
+							<td>1</td>
+							<td>0</td>
+							<td>0</td>
+							<td>
+									100%
+							</td>
+						</tr>
+						<tr>
+							<td>@deletetheemployee</td>
+							<td>1</td>
+							<td>0</td>
+							<td>0</td>
+							<td>
+									100%
+							</td>
+						</tr>
+						<tr>
+							<td>@smoke</td>
+							<td>5</td>
+							<td>0</td>
+							<td>0</td>
+							<td>
+									100%
+							</td>
+						</tr>
+						<tr>
+							<td>@all</td>
+							<td>5</td>
+							<td>0</td>
+							<td>0</td>
+							<td>
+									100%
+							</td>
+						</tr>
+						<tr>
+							<td>@employeeCRUD</td>
+							<td>4</td>
+							<td>0</td>
+							<td>0</td>
+							<td>
+									100%
+							</td>
+						</tr>
+						<tr>
+							<td>@getcfoname</td>
+							<td>1</td>
+							<td>0</td>
+							<td>0</td>
+							<td>
+									100%
+							</td>
+						</tr>
+						<tr>
+							<td>@edit</td>
+							<td>1</td>
+							<td>0</td>
+							<td>0</td>
+							<td>
+									100%
+							</td>
+						</tr>
+						<tr>
+							<td>@addemployee</td>
+							<td>1</td>
+							<td>0</td>
+							<td>0</td>
+							<td>
+									100%
+							</td>
+						</tr>
+						<tr>
+							<td>@edittheemployee</td>
+							<td>1</td>
+							<td>0</td>
+							<td>0</td>
+							<td>
+									100%
+							</td>
+						</tr>
+						<tr>
+							<td>@retrive</td>
+							<td>1</td>
+							<td>0</td>
+							<td>0</td>
+							<td>
+									100%
+							</td>
+						</tr>
+						<tr>
+							<td>@verifyemployeinfo</td>
+							<td>1</td>
+							<td>0</td>
+							<td>0</td>
+							<td>
+									100%
+							</td>
+						</tr>
+						<tr>
+							<td>@delete</td>
+							<td>1</td>
+							<td>0</td>
+							<td>0</td>
+							<td>
+									100%
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- dashboard view -->
+		</div>
+		<!-- container -->
+		<script>
+			var statusGroup = {
+                parentCount: 5,
+				passParent: 5,
+				failParent: 0,
+				fatalParent: 0,
+				errorParent: 0,
+				warningParent: 0,
+				skipParent: 0,
+				childCount: 5,
+				passChild: 5,
+				failChild: 0,
+				fatalChild: 0,
+				errorChild: 0,
+				warningChild: 0,
+				skipChild: 0,
+				infoChild: 0,
+				grandChildCount: 31,
+				passGrandChild: 31,
+				failGrandChild: 0,
+				fatalGrandChild: 0,
+				errorGrandChild: 0,
+				warningGrandChild: 0,
+				skipGrandChild: 0,
+				infoGrandChild: 0,
+			};
+			</script>
+		
+		<script>
+			var timeline = {
+			        "This feature is to get the CFO name from the OrangeHRM app":11.348,"This feature is to add and check the employee":8.255,"This feature is to check the previously added employee is there or not":2.473,"This feature is to verify the edit functionality":6.328,"This feature is to delete the existing employee":2.726
+			};
+		</script>
+		
+		  <script src='https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@ff53917fbbdb5ef820abbbe4d199a6942dc771ff/v3html/js/extent.js' type='text/javascript'></script>
+		
+		
+		<script type='text/javascript'>
+				
+		</script> 
+
+	</body>
+</html>

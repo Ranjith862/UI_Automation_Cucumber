@@ -11,7 +11,7 @@ import io.cucumber.junit.CucumberOptions;
 		 glue = "com.lao.step_definitions", 
          dryRun = false, 
          monochrome = true,
-		 tags = "@employeeCRUD", 
+		 tags = "@all", 
          plugin =  {"pretty","com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:","html:target/report/webreport.html","json:target/report/jsonreport.json","rerun:target/failed_test_scenario.txt"} 
 		 )
 

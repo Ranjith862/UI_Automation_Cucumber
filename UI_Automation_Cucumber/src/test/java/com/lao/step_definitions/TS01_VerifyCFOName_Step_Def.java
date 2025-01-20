@@ -67,15 +67,17 @@ public class TS01_VerifyCFOName_Step_Def {
 	public void the_user_should_see_the_cfo_name_as(String expectedCFOName) {
 		try {
 			String actualMessage = directory.getName();
+
 			if (expectedCFOName.equalsIgnoreCase(actualMessage)) {
 				System.out.println("Record Found: " + actualMessage);
 			} else {
-				System.out.println("Record Not Found");
+				System.out.println("Record Not Found: Expected - " + expectedCFOName + ", Actual - " + actualMessage);
+				Assert.fail("CFO name does not match!");
 			}
-
 		} catch (Exception e) {
 			e.printStackTrace();
-			Assert.fail(e.getMessage());
+			Assert.fail("An error occurred: " + e.getMessage());
 		}
+
 	}
 }

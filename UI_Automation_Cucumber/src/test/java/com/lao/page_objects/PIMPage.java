@@ -43,7 +43,7 @@ public class PIMPage {
 	private WebElement PERSONAL_DETAILS;
 
 	// Employee List
-	@FindBy(xpath = "(//input[@placeholder='Type for hints...'])[1]")
+	@FindBy(xpath = "//label[contains(text(),'Employee Name')]/parent::div/following-sibling::div/descendant::input")
 	private WebElement EMPLOYEE_NAME;
 
 	@FindBy(xpath = "//button[@type='submit']")

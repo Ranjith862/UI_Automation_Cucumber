@@ -1,11 +1,11 @@
 package com.lao.page_objects;
 
-import org.openqa.selenium.Alert;
+import java.util.NoSuchElementException;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.Select;
 
 import com.lao.webdriver_manager.DriverManager;
 
@@ -23,7 +23,7 @@ public class DirectoryPage {
 		return directoryPageInstance;
 	}
 
-	@FindBy(xpath = "(//div[@tabindex='0'])[1]")
+	@FindBy(xpath = "//label[text()='Job Title']//parent::div//following-sibling::div//div[@class='oxd-select-text-input']")
 	private WebElement JOBTITLE_DROPDOWN;
 
 	@FindBy(xpath = "/html/body/div/div[1]/div[2]/div[2]/div/div[1]/div[2]/form/div[1]/div/div[2]/div/div[2]/div/div/div[1]")
@@ -50,6 +50,14 @@ public class DirectoryPage {
 	}
 
 	public String getName() {
-		return NAME.getText();
+		try {
+			if (NAME.isDisplayed()) {
+				return NAME.getText();
+			} else {
+				return "No record is there";
+			}
+		} catch (NoSuchElementException e) {
+			return "No record is there";
+		}
 	}
 }
